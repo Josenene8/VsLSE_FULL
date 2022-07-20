@@ -138,6 +138,7 @@ class ControlsSubState extends MusicBeatSubstate {
 			        FlxG.resetState();
                                 #else
 				close();
+				#end
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 			}
 
