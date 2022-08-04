@@ -106,5 +106,5 @@ class DiscordClient
 		});
 	}
 	#end
-	#if deskto	
+	#end	
 }
