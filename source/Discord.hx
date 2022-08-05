@@ -1,9 +1,9 @@
 package;
 
 import Sys.sleep;
-#if desktop 
-import discord_rpc.DiscordRpc;
-#end
+/*#if desktop 
+import discord_rpc.DiscordRpc;*/
+
 #if LUA_ALLOWED
 import llua.Lua;
 import llua.State;
@@ -15,7 +15,7 @@ class DiscordClient
 {
 	public function new()
 	{
-		#if desktop
+		/*#if desktop
 		trace("Discord Client starting...");
 		DiscordRpc.start({
 			clientID: "938163510997819474",
@@ -33,26 +33,26 @@ class DiscordClient
 		}
 
 		DiscordRpc.shutdown();
-		#end
+		#end*/
 	}
 	
 	public static function shutdown()
 	{
-		#if desktop
+		/*#if desktop
 		DiscordRpc.shutdown();
-		#end
+		#enr*/
 	}
 	
 	static function onReady()
 	{
-		#if desktop
+		/*#if desktop
 		DiscordRpc.presence({
 			details: "In the Menus",
 			state: null,
 			largeImageKey: 'icon',
 			largeImageText: "vs. LSE"
 		});
-	}       #end
+	}       #end*/
 
 	static function onError(_code:Int, _message:String)
 	{
@@ -66,18 +66,18 @@ class DiscordClient
 
 	public static function initialize()
 	{
-		#if desktop
+		/*#if desktop
 		var DiscordDaemon = sys.thread.Thread.create(() ->
 		{
 			new DiscordClient();
 		});
 		trace("Discord Client initialized");
-		#end
+		#end*/
 	}
 
 	public static function changePresence(details:String, state:Null<String>, ?smallImageKey : String, ?hasStartTimestamp : Bool, ?endTimestamp: Float)
 	{
-		#if desktop
+		/*#if desktop
 		var startTimestamp:Float = if(hasStartTimestamp) Date.now().getTime() else 0;
 
 		if (endTimestamp > 0)
@@ -97,7 +97,7 @@ class DiscordClient
 		});
 
 		//trace('Discord RPC Updated. Arguments: $details, $state, $smallImageKey, $hasStartTimestamp, $endTimestamp');
-	}
+	}*/
 
 	#if LUA_ALLOWED
 	public static function addLuaCallbacks(lua:State) {
@@ -106,5 +106,5 @@ class DiscordClient
 		});
 	}
 	#end
-	#end	
+	
 }
