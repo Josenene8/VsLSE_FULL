@@ -13,6 +13,10 @@ import animateatlas.displayobject.SpriteMovieClip;
 import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxFramesCollection;
 import flixel.graphics.frames.FlxFrame;
+#if sys
+import sys.io.File;
+import sys.FileSystem;
+#end
 /*#if desktop
 import sys.FileSystem;
 import sys.io.File;
