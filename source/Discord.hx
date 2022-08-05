@@ -51,8 +51,9 @@ class DiscordClient
 			state: null,
 			largeImageKey: 'icon',
 			largeImageText: "vs. LSE"
-		});
-	}       #end*/
+		});*/
+	}   
+	
 
 	static function onError(_code:Int, _message:String)
 	{
