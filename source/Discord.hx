@@ -98,7 +98,7 @@ class DiscordClient
 			startTimestamp : Std.int(startTimestamp / 1000),
                         endTimestamp : Std.int(endTimestamp / 1000)
 		});
-
+                #end
 		//trace('Discord RPC Updated. Arguments: $details, $state, $smallImageKey, $hasStartTimestamp, $endTimestamp');
 	}
 
@@ -109,5 +109,5 @@ class DiscordClient
 		});
 	}
 	#end
-	#end
+	
 }
